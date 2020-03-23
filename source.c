@@ -14,6 +14,12 @@ void do_something(int n) {
 
 void test1() {
   int n;
+  /*
+    exists (Call c|
+      c.getTarget().getName().matches("%scanf%") and
+      c.getAnArgument() = node.(DataFlow::DefinitionByReferenceNode).getArgument()
+    )
+  */
   scanf("%d", &n);
   printf("%d\n", n);
   do_something(n);
@@ -21,6 +27,9 @@ void test1() {
 
 void test2() {
   int n;
+  /*
+    node.asExpr().(Call).getTarget().getName().matches("read_int")
+   */
   n = read_int();
   printf("%d\n", n);
   do_something(n);
