@@ -1,3 +1,5 @@
+#include "macro.h"
+
 #include <stdio.h>
 
 #define M_CONST 10
@@ -9,6 +11,8 @@ int main() {
   printf("M_CONST: %d\n", M_CONST);
   printf("M_ADD(2, 3): %d\n", M_ADD(2, 3));
   printf("M_RECURSIVE(6): %d\n", M_RECURSIVE(6));
+
+  print_number(16);
 
   return 0;
 }
